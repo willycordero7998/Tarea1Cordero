@@ -1,33 +1,43 @@
-import math  # Importar la librería math ya que es necesaria para realizar las operaciones solicitadas
+import math
 
 
-def multiple_op(X):  # Nombre de la función y esta recibe un solo parámetro X que tiene que ser un número
-    try:  # Lleva al parámetro a anaálisis para ver si cumple la condición dada
-        int(X)  # Condición que se busca que el parámetro cumpla, osea que sea un número
-        b = [X*X, 2**X, math.factorial(X)]  # arreglo con las operaciones que deben hacerse con el parámetro X
-    except ValueError:  # Tipo Excepción que se busca a la hora de probar la condición
-        print("Error,debe ser número")  # Error que se menciona al Usuario
-    return b  # Devuelve el arreglo con las operaciones hechas
+def multiple_op(X):
+    """
+    Nombre de la función y esta recibe un solo parámetro
+    X que tiene que ser un número y a su vez retorna
+    una arrays con las operaciones realizadas
+    """
+    try:
+        int(X)
+        b = [X*X, 2**X, math.factorial(X)]  # Operaciones con parámetro X
+    except ValueError:
+        print("Error,debe ser número")
+    return b
 
 
-def verify_array_op(array):  # Nombre de la función y esta recibe un solo parámetro array que todos sus elementos tienen que ser un número
-    c = []  # Array que posteriormente va a contener las operaciones relaciones realizadas a cada uno de los elementos del array inicial recibido
-    b = []  # Array que posteriormente va a ser el array de arrays
-    lon = len(array)  # Lee la longitud del array recibido
-    a = 0  # Variable que servirá para ver si todos lo parámetros del array son números
-    for i in range(0, lon):  # Recorre todos lo parámtero del array inicial
+def verify_array_op(array):
+    """
+    Nombre de la función y esta recibe un solo parámetro array
+    que todos sus elementos tienen que ser un número y a su vez
+    retorna una arrays de arrays con las operaciones realizadas
+    """
+    c = []  # Array secundario
+    b = []  # Array de arrays
+    lon = len(array)  # Longitud del array recibido
+    a = 0  # Servirá para comparar si los parámetros del array son números
+    for i in range(0, lon):
         y = array[i]  # Asigna un valor del array a la variable
-    try:  # Lleva al parámetro a anaálisis para ver si cumple la condición dada
-        int(y)  # Condición que se busca que el parámetro cumpla
+    try:
+        int(y)
         a = a+1  # Si la condición se cumple se suma 1
-    except ValueError:  # Tipo Excepción que se busca a la hora de probar la condición, osea que sea un número
-        print("Error,deben ser números")  # Error que se menciona al Usuario
-    if a == lon:  # Se comprueba que el arreglo inicial cumple que todos son números si el codigo pasa por el try las mismas veces que la cantidad de parámetros del arreglo
-        for i in range(0, lon):  # Recorre todos lo parámtero del array inicial
+    except ValueError:
+        print("Error,deben ser números")
+    if a == lon:
+        for i in range(0, lon):
             X = array[i]  # Asigna un valor del array a la variable
-            c = [X*X, 2**X, math.factorial(X)]  # arreglo con las operaciones que deben hacerse con el parámetro X
-            b.append(c)  # agrega el arreglo c al arreglo de arreglos b
+            c = [X*X, 2**X, math.factorial(X)]  # Operaciones el parámetro X
+            b.append(c)  # Agrega el arreglo c al arreglo de arreglos b
     else:
-        print("Error,todos deben ser números")  # Error que se menciona al Usuario
+        print("Error,todos deben ser números")
 
-    return b  # Devuelve el arreglo con las operaciones hechas
+    return b
