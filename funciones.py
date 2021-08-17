@@ -1,4 +1,7 @@
 import math
+# ERR3x2 -3 : EL error se debe RETORNAR, ustedes solo lo estan imprimiendo
+#         a su vez el codigo de verify no pone el try except dentro del
+#         ciclo for
 
 
 def multiple_op(X):

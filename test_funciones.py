@@ -1,7 +1,11 @@
 import random
 from funciones import multiple_op
 from funciones import verify_array_op
-
+# ERR4 -10
+# ERR2x2 -5: Los test nunca prueban que los métodos den el resutlado correcto
+# a su vez tienen los mismos problemas que en el codigo en cuanto al uso de
+# try except
+# Nota 72.72
 
 def test_funciones():
     """
